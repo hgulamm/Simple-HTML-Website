@@ -1,0 +1,87 @@
+<html>
+    
+    
+<head>
+   <link rel="stylesheet" href="style.css"/>
+    </head>
+    
+<body>
+    <header>
+   <h1> HTML5 Website</h1>
+    
+    </header>
+   
+    <nav>
+        <ul>
+        <li>
+            <a  href="index.html" >Home</a>
+            </li>
+            <li>
+            <a href="About.html" >About</a>
+            </li>
+            <li>
+            <a href="Services.html" >Services</a>
+            </li>
+            <li>
+            <a href="Contact.html" >Contact</a>
+            </li>
+            <li class="menu">
+            <a href="#" class="active" >CSS3 Project</a>
+                <div>
+                    <hr>
+                    <a  href="AudioVideo.html" >Audio & Video Project</a>
+                
+           <hr>
+                      <a  href="canvas.html" > Canvas Project</a>
+              <hr>
+                     
+            <a  href="SVG.html" > SVG Project</a>
+            
+                </div>
+            </li>
+        </ul>
+        
+        </nav>
+        <main>
+  
+            <h1>
+        Audio & Video Project</h1>
+            <p>
+        This page uses custom video & audio tags in HTML5.
+        </p>
+ 
+        <h2>Video</h2>
+          
+        <video src="https://tutorialehtml.com/assets_tutorials/media/Shaun-the-Sheep-The-Movie-Official-Trailer.mp4"  controls > Happy Little Accident: Your browser does not support video</video>
+           
+       <h2>Audio</h2>
+        <p>    The audio controls are written in Javascript. Please wait for few seconds after pressing Play button.</p>
+        <audio id="myaudio" src="https://tutorialehtml.com/assets_tutorials/media/Loreena_Mckennitt_Snow_56bit.mp3"  >Your browser does not support the audio</audio >
+<button onclick="audio_play()">Play Audio</button>
+            <button onclick="audio_pause()">Pause</button>
+            <button onclick="document.getElementById('myaudio').volume+=0.1">Volume up</button>
+            <button onclick="document.getElementById('myaudio').volume-=0.1">Volume Down</button>
+            
+           <script>
+             
+            function audio_play(){
+                var audio = document.getElementById('myaudio');
+                audio.play();
+                
+            }
+               function audio_pause(){
+                var audio = document.getElementById('myaudio');
+                audio.pause();
+                
+            }
+            </script>
+            <footer>
+            Copyright &copy; 2019
+            
+            </footer>
+        
+    </main>
+   
+    </body>
+
+</html>
