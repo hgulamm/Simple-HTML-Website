@@ -1,38 +1,147 @@
 <html>
-<head>
     
-    <link rel="stylesheet" href="style.css"/>
-    <title>Home | Simple HTML Website</title>
-    </head>
-    <body>
-        <h1>Simple HTML Website</h1>
-        <div id="container">
-        <div id="nav">
+    
+<head>
+    <style>
+        sidebar{
+            line-height: 1.6em;
             
-        <ul >
-            <li><a class="active" href="#">Home</a></li>
-            <li><a href="About.html">About</a></li>
-            <li><a href="Services.html">Services</a></li>
-            <li><a href="Contact.html">Contact</a></li>
-            </ul>
-        </div>
-    <div id="main">
-        <h2> Welcome</h2>
-        <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean condimentum placerat ante id placerat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus consequat malesuada nulla, sit amet hendrerit libero imperdiet vitae. Donec aliquet neque in enim bibendum volutpat. Duis et turpis turpis. Quisque malesuada lacinia massa eu tempor. Proin lectus nulla, rutrum in pharetra at, sodales eu justo. Donec in dictum dui, nec scelerisque arcu. Integer libero massa, finibus in hendrerit vel, interdum nec turpis.
-
-Ut accumsan at nunc ac tristique. Curabitur consectetur vitae augue in ullamcorper. Quisque volutpat purus at urna hendrerit lobortis. Sed et fermentum mauris. Fusce scelerisque congue libero, in ultrices sapien luctus id. Suspendisse viverra felis massa, id tincidunt ligula ultrices et. Sed eget nisl est. Proin accumsan porttitor ipsum, ac feugiat nibh aliquam ac. Sed ullamcorper orci vitae arcu dictum aliquam quis non risus. Curabitur sollicitudin nibh non nibh elementum bibendum. Integer sollicitudin ante augue, vitae elementum nulla imperdiet nec. Duis placerat rhoncus felis, sed imperdiet nisl cursus consectetur.
-        </p>
-        </div>
-        <div id="sidebar">
-            <h3>Sidebar</h3>
-            <p>
-       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean condimentum placerat ante id placerat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus consequat malesuada nulla, sit amet hendrerit libero imperdiet vitae. Donec aliquet neque in enim bibendum volutpat. Duis et turpis turpis. 
-     </p>   </div>
-        <div id="clr"></div>
-        <div id="footer">
-        Copyright &copy; 2019
-        </div>
-            </div>
+        }
+        
+        #container{
+            width: 400px auto;
+            overflow: hidden;
+           
+            
+        }
+        .clear{
+            text-decoration: none;
+            background: #333;
+            color: #fff;
+            
+            
+        }
+        article{
+            column-count: 2;
+            column-rule: 1px solid ;
+            column-gap: 40px;
+        }
+        
+        article h2{
+            column-span: all;
+        }
+        
+        #note{
+           border: 1px solid white; 
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+    
+    </style>
+   <link rel="stylesheet" href="style.css"/>
+    <script>
+    function getNote()
+        {
+            if(localStorage.getItem('note'))
+                {
+                    var note= localStorage.getItem('note');
+                }
+            else{
+                var note="Go ahead and edit this note to save in local storage";
+            }
+            
+            document.getElementById('note').innerHTML=note;
+            
+        }
+    function saveNote(id)
+        {
+            var note=document.getElementById('note').innerHTML;
+            
+            localStorage.setItem('note',note);
+            
+        }
+        function clearNote(){
+            clear: localStorage.clear();
+            return false; //do not go to link
+        }
+    </script>
+    
+    </head>
+    
+<body>
+    <header>
+   <h1> HTML5 Website</h1>
+    
+    </header>
+   
+    <nav>
+        <ul>
+        <li>
+            <a class="active" href="index.html" >Home</a>
+            </li>
+            <li>
+            <a href="About.html" >About</a>
+            </li>
+            <li>
+            <a href="Services.html" >Services</a>
+            </li>
+            <li>
+            <a href="Contact.html" >Contact</a>
+            </li>
+              <li class="menu">
+            <a href="#"  >CSS3 Project</a>
+                <div>
+                    <hr>
+                    <a  href="AudioVideo.html" >Audio & Video Project</a>
+                
+           <hr>
+                      <a  href="canvas.html" > Canvas Project</a>
+              <hr>
+                     
+            <a  href="SVG.html" > SVG Project</a>
+            
+                </div>
+            </li>
+        </ul>
+        
+        </nav>
+        <main>
+    
+    <article>
+    <h2>Welcome</h2>
+          Sed eget nisl est. Proin accumsan porttitor ipsum, ac feugiat nibh aliquam ac. Sed ullamcorper orci vitae arcu dictum aliquam quis non risus. Curabitur sollicitudin nibh non nibh elementum bibendum. Integer sollicitudin ante augue, vitae elementum nulla imperdiet nec. Duis placerat rhoncus felis, sed imperdiet nisl cursus consectetur.
+        
+         Sed eget nisl est. Proin accumsan porttitor ipsum, ac feugiat nibh aliquam ac. Sed ullamcorper orci vitae arcu dictum aliquam quis non risus. Curabitur sollicitudin nibh non nibh elementum bibendum. Integer sollicitudin ante augue, vitae elementum nulla imperdiet nec. Duis placerat rhoncus felis, sed imperdiet nisl cursus consectetur.
+        
+        </article>
+            <sidebar>
+                <h2>Notes</h2>
+                 <mynote>
+           
+            <section id="container">
+                <div id="note" contenteditable="true" onkeyup="saveNote(this.id)">
+                
+                
+                </div>
+               
+                <div>
+                    <script>
+                    getNote();
+                    </script>
+                    
+            <a href="" class="clear" onclick="javascript:clearNote();">     <button>Clear Note </button></a>
+                </div>
+                
+                </section>
+            </mynote>
+          
+            </sidebar>
+            <footer>
+            Copyright &copy; 2019
+            
+            </footer>
+    </main>
+   
     </body>
+
 </html>
