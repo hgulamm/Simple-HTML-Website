@@ -1,0 +1,148 @@
+<html>
+<head>
+    <link rel="stylesheet" href="style.css"/>
+    <style>
+        drag #box{
+    width: 300px;
+        height: 150px;
+            padding:10px;
+        border: 1px solid white;
+            overflow: auto;
+            resize: both;
+           
+            }
+        
+        flex{
+            
+            display: flex;
+            overflow: auto;
+          
+            border: 1px dotted;
+         
+        flex-direction: row;
+           
+            height: 250px;
+            
+        justify-content:space-around;
+            
+            resize: both;
+            
+        }
+        flex svg{
+            
+            height: auto;
+            background: grey;
+            width: 400px;
+            margin: 20px;   
+            padding-top: 5px;
+            padding-left: 5px;
+            
+        }
+        
+    </style>
+    <script>
+   function allowDrop(ev)
+        {
+            ev.preventDefault();
+            //Prevents from going to a link
+        }
+        function drop(ev)
+        {
+            ev.preventDefault();
+            var imgdrop=ev.dataTransfer.getData("image");
+ ev.target.appendChild(document.getElementById(imgdrop));
+        }
+        
+        function drag(ev)
+        {
+            ev.dataTransfer.setData("image",ev.target.id)
+            
+        }
+    
+    </script>
+ </head>
+<body>
+     <header>
+   <h1> HTML5 Website</h1>
+    
+    </header>
+   
+    <nav>
+        <ul>
+        <li>
+            <a  href="index.html" >Home</a>
+            </li>
+            <li>
+            <a href="About.html" >About</a>
+            </li>
+            <li>
+            <a href="Services.html" >Services</a>
+            </li>
+            <li>
+            <a href="Contact.html" >Contact</a>
+            </li>
+             <li class="menu">
+            <a href="#" class="active" >CSS3 Project</a>
+                <div>
+                    <hr>
+                    <a  href="AudioVideo.html" >Audio & Video Project</a>
+                
+           <hr>
+                      <a  href="canvas.html" > Canvas Project</a>
+              <hr>
+                     
+            <a  href="SVG.html" > SVG Project</a>
+            
+                </div>
+            </li>
+             
+        </ul>
+        
+        </nav>
+        <main>
+      
+      <h1>
+        SVG - Project on Vector Graphics</h1>
+            <p>
+            This project uses SVG tags in HTML5 to create Scalar vector graphics. SVG is an XML-based vector image format. Flex display is used to display the SVG elements. The resize feature in css3 allows the boxes to resize. 
+        </p>
+           <flex> 
+            <svg  >
+            <circle cx="80" cy="70" r="60" stroke="blue" stroke-width="4" fill="purple"/>
+            
+            
+            </svg>
+    <svg >
+            <rect width="180" height="100" 
+                  style="fill:rgb(255,0,0);stroke-width: 2; stroke: green"/>
+            </svg>
+
+            <svg >
+            
+            <polygon points="100,10 40,198, 190,78 10,78 160,198" style="fill:yellow;stroke:black;stroke-width:5;fill-rule:evenodd"/>
+            </svg>
+            
+            <svg >
+                <ellipse cx="160" cy="70" rx="135" ry="60" fill="black" />
+                <text fill="#ffffff" font-size="45" font-family="Tahona" x="50" y="86">SVG LOGO</text>
+            </svg>
+          </flex>
+            <h1>Drag & Drop</h1>
+            <drag>
+                <p>
+                You can drag and drop the image to the box below. 
+                </p>
+          <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+               
+                </div>
+                <img id="dragimg" src="https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg" height="150" width="auto" draggable="true" ondragstart="drag(event)"  />
+                
+                
+            </drag>
+    <footer>
+    Copyright &copy; 2019</footer>         
+           
+            </main>
+   
+</body>
+</html>
