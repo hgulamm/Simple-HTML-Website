@@ -1,0 +1,100 @@
+<html>
+<head>
+    <link rel="stylesheet" href="style.css"/>
+ </head>
+<body>
+     <header>
+   <h1> HTML5 Website</h1>
+    
+    </header>
+   
+    <nav>
+        <ul>
+        <li>
+            <a  href="index.html" >Home</a>
+            </li>
+            <li>
+            <a href="About.html" >About</a>
+            </li>
+            <li>
+            <a href="Services.html" >Services</a>
+            </li>
+            <li>
+            <a href="Contact.html" >Contact</a>
+            </li>
+             <li class="menu">
+            <a href="#" class="active" >CSS3 Project</a>
+                <div>
+                    <hr>
+                    <a  href="AudioVideo.html" >Audio & Video Project</a>
+                
+           <hr>
+                      <a  href="canvas.html" > Canvas Project</a>
+              <hr>
+                     
+            <a  href="SVG.html" > SVG Project</a>
+            
+                </div>
+            </li>
+        </ul>
+        
+        </nav>
+        <main>
+  
+            <h1>
+        Canvas Project</h1>
+            <p>
+        This page uses Javascript functions in HTML5 to create Gradient, Rectange, Circle, Line and Font using fill and stroke commands.
+        </p>
+    
+<canvas id="mycanvas" width="300" height="300">
+    
+    </canvas>
+    
+    
+    <script>
+    var canvas=document.getElementById("mycanvas");
+        var ctx= canvas.getContext('2d');
+         //Gradient
+        var grd=ctx.createLinearGradient(0,0,200,0);
+        grd.addColorStop(0,'pink');
+        grd.addColorStop(1,'white');
+        ctx.fillStyle=grd;
+        ctx.fillRect(0,0,300,300);
+        
+        
+        //Rectangle
+        ctx.fillStyle='#f2668b';
+        ctx.fillRect(75,75,150,150);
+        
+        //Line
+        ctx.moveTo(0,0);
+        ctx.lineTo(300,300);
+        ctx.stroke();
+        
+        
+        //Cirle
+        ctx.beginPath();
+        ctx.arc(150,150,60,0,2*Math.PI);
+        ctx.fillStyle='purple';
+        ctx.fill();
+        
+        //Circle circumference
+        ctx.lineWidth=4;
+        ctx.strokeStyle='black';
+        ctx.stroke();
+        
+        //Text
+        ctx.font='50px Arial';
+        ctx.strokeStyle='black';
+        ctx.strokeText('Canvas',60,60);
+        
+       
+        
+    </script>
+    <footer>
+    Copyright &copy; 2019</footer>
+    </main>
+
+</body>
+</html>
