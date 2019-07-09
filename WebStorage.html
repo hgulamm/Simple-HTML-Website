@@ -1,0 +1,86 @@
+<html>
+<head>
+    <link rel="stylesheet" href="style.css"/>
+ </head>
+<body>
+     <header>
+   <h1> HTML5 Website</h1>
+    
+    </header>
+   
+    <nav>
+        <ul>
+        <li>
+            <a  href="index.html" >Home</a>
+            </li>
+            <li>
+            <a href="About.html" >About</a>
+            </li>
+            <li>
+            <a href="Services.html" >Services</a>
+            </li>
+            <li>
+            <a href="Contact.html" >Contact</a>
+            </li>
+             <li>
+            <a href="AudioVideo.html" >Audio & Video Project</a>
+                 
+            </li>
+            <li><a  href="canvas.html" > Canvas Project</a></li>
+            <li>
+            <a  href="SVG.html" > SVG Project</a>
+            </li>
+            <li>
+            <a class="active" href="WebStorage.html" > Web Storage Project</a>
+            </li>
+        </ul>
+        
+        </nav>
+        <main>
+        <div id="container">
+            
+            </div>
+            <div id="session"></div>
+      <script>
+            localStorage.setItem('name','Hiba')
+           //  localStorage.removeItem('name');
+          
+        if(typeof(Storage!=undefined)){
+           if(localStorage.name)
+               {
+                    document.getElementById("container").innerHTML= "Welcome, I am "+localStorage.name;
+               }
+              else{
+                document.getElementById("container").innerHTML= "No Name Found";
+                  
+              }
+              }
+          else{
+              console.log("Browser does not support localStorage")
+          }
+             
+         sessionStorage.setItem('session','Mohideen');   //  localStorage.removeItem('name');
+          
+        if(typeof(Storage!=undefined)){
+           if(sessionStorage.session)
+               {
+                    document.getElementById("session").innerHTML= "Welcome, I am "+sessionStorage.session;
+               }
+              else{
+                document.getElementById("session").innerHTML= "No Name Found";
+                  
+              }
+              }
+          else{
+              console.log("Browser does not support sessionStorage")
+          }
+          
+         
+         
+            </script>
+    <footer>
+    Copyright &copy; 2019</footer>
+    </main>
+   
+</body>
+</html>
